@@ -1,0 +1,19 @@
+node_modules/
+dist/
+codex-build*/
+.env
+.env.*
+!.env.example
+*.log
+*.jks
+*.keystore
+*.p12
+*.pfx
+google-services.json
+service-account*.json
+android/.idea/
+android/.kotlin/
+android/local.properties
+.idea/
+android/app/release/
+/Voyage hUB

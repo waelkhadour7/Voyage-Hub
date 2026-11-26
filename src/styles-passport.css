@@ -1,0 +1,585 @@
+/* ==========================================================================
+   DIGITAL PASSPORT & WORLD MAP STYLESHEET - Prefixed with 'pp-'
+   ========================================================================== */
+
+.pp-section {
+  padding-block: 60px 96px; /* Extra bottom padding for floating buttons */
+  background: #f8fafc;
+}
+
+.pp-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px 28px;
+  box-shadow: 0 12px 36px rgba(11, 74, 158, 0.08);
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.pp-example-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ef4444;
+  color: #ffffff;
+  padding: 8px 16px;
+  margin: -32px -28px 24px -28px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.pp-example-ribbon button {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 0;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pp-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+
+.pp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: #f0f7ff;
+  color: var(--navy, #0b4a9e);
+  border: 1px solid #bfdbfe;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pp-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pp-example-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #faf5ff;
+  color: #7e22ce;
+  border: 1px solid #e9d5ff;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pp-lang-toggle {
+  padding: 6px 14px;
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.pp-hero {
+  margin-bottom: 24px;
+}
+
+.pp-title {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 800;
+  color: var(--navy, #0b4a9e);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.pp-subtitle {
+  font-size: 15px;
+  color: #64748b;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.pp-souvenir-bar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.pp-souvenir-tag, .pp-privacy-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: #f8fafc;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+
+/* --------------------------------------------------------------------------
+   TABS
+   -------------------------------------------------------------------------- */
+.pp-tabs-wrap {
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.pp-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  margin-bottom: -2px;
+}
+
+.pp-tab-btn:hover {
+  color: var(--navy, #0b4a9e);
+}
+
+.pp-tab-btn.is-active {
+  color: var(--navy, #0b4a9e);
+  border-bottom-color: var(--navy, #0b4a9e);
+}
+
+/* --------------------------------------------------------------------------
+   MAP & CONTROLS
+   -------------------------------------------------------------------------- */
+.pp-map-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pp-view-toggle-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pp-view-switches {
+  display: flex;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 10px;
+  gap: 4px;
+}
+
+.pp-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pp-view-btn.is-active {
+  background: #ffffff;
+  color: var(--navy, #0b4a9e);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.pp-visited-count-badge {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy, #0b4a9e);
+  background: #f0f7ff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #bfdbfe;
+}
+
+.pp-map-wrap {
+  position: relative;
+  background: #0f172a;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.2);
+  height: 420px;
+  touch-action: none;
+}
+
+.pp-map-controls {
+  position: absolute;
+  top: 14px;
+  inset-inline-end: 14px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pp-map-btn {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px);
+}
+
+.pp-map-svg {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+.pp-map-svg:active {
+  cursor: grabbing;
+}
+
+.pp-country-path {
+  fill: #334155;
+  stroke: #1e293b;
+  stroke-width: 0.6px;
+  cursor: pointer;
+  transition: fill 0.2s, stroke 0.2s;
+}
+
+.pp-country-path:hover {
+  fill: #475569;
+}
+
+.pp-country-path.is-visited {
+  fill: var(--lime, #8dbb2e);
+}
+
+.pp-country-path.is-wishlist {
+  stroke: #f59e0b;
+  stroke-width: 1.5px;
+  stroke-dasharray: 4 2;
+}
+
+.pp-small-marker {
+  fill: #94a3b8;
+  stroke: #ffffff;
+  stroke-width: 0.8px;
+  cursor: pointer;
+}
+
+.pp-small-marker.is-visited {
+  fill: var(--lime, #8dbb2e);
+}
+
+.pp-small-marker.is-wishlist {
+  fill: #f59e0b;
+}
+
+/* --------------------------------------------------------------------------
+   COUNTRY LIST VIEW
+   -------------------------------------------------------------------------- */
+.pp-list-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pp-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pp-search-icon {
+  position: absolute;
+  inset-inline-start: 14px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.pp-search-input {
+  width: 100%;
+  height: 44px;
+  padding-inline-start: 42px;
+  padding-inline-end: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.pp-country-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  max-height: 380px;
+  overflow-y: auto;
+  padding-inline-end: 4px;
+}
+
+.pp-list-card {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  text-align: start;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pp-list-card:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+}
+
+.pp-list-card.is-visited {
+  border-color: var(--lime, #8dbb2e);
+  background: #f7fee7;
+}
+
+.pp-list-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.pp-code-badge {
+  padding: 2px 6px;
+  background: #f1f5f9;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #475569;
+}
+
+.pp-badge-visited {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: var(--lime, #8dbb2e);
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.pp-badge-wishlist {
+  color: #f59e0b;
+}
+
+.pp-list-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.pp-list-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--navy, #0b4a9e);
+}
+
+/* --------------------------------------------------------------------------
+   SHEET / TRIP FORM
+   -------------------------------------------------------------------------- */
+.pp-sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(8, 20, 40, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.pp-sheet {
+  position: relative;
+  width: min(520px, 100%);
+  max-height: 90vh;
+  background: #ffffff;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  padding: 28px 24px calc(24px + env(safe-area-inset-bottom, 0px));
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.pp-sheet-close {
+  position: absolute;
+  top: 18px;
+  inset-inline-end: 18px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #334155;
+  cursor: pointer;
+}
+
+.pp-sheet-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy, #0b4a9e);
+  margin-bottom: 20px;
+}
+
+.pp-trip-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pp-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pp-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.pp-date-row {
+  display: flex;
+  gap: 10px;
+}
+
+.pp-select, .pp-input, .pp-textarea {
+  width: 100%;
+  height: 44px;
+  padding-inline: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.pp-textarea {
+  height: 72px;
+  padding-block: 10px;
+  resize: none;
+}
+
+.pp-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+}
+
+.pp-btn-save {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 48px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--navy, #0b4a9e);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.pp-form-error {
+  padding: 10px;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.pp-placeholder-tab {
+  padding: 48px 20px;
+  text-align: center;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px dashed #cbd5e1;
+}
+
+.pp-placeholder-tab h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--navy, #0b4a9e);
+  margin-bottom: 6px;
+}
+
+.pp-placeholder-tab p {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pp-tab-btn,
+  .pp-country-path,
+  .pp-list-card {
+    transition: none !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .pp-card {
+    padding: 20px 16px;
+  }
+  .pp-country-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

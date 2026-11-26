@@ -1,0 +1,28 @@
+.smart-trip { padding: 72px 20px; background: #f1f7fc; color: #15374e; }
+.smart-wrap { max-width: 1100px; margin: auto; }
+.smart-heading { max-width: 600px; margin-bottom: 30px; }
+.smart-kicker { display: inline-flex; align-items: center; gap: 7px; color: #0089d1; font-size: 11px; font-weight: 800; letter-spacing: .12em; }
+.smart-heading h2 { margin: 10px 0; font-size: clamp(30px, 4vw, 44px); line-height: 1.15; }
+.smart-heading p { margin: 0; color: #617a8d; line-height: 1.6; }
+.smart-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.smart-panel { padding: 24px; background: white; border: 1px solid #dceaf2; border-radius: 20px; box-shadow: 0 8px 24px rgba(18, 53, 76, .04); }
+.smart-panel h3 { display: flex; align-items: center; gap: 9px; margin: 0 0 19px; font-size: 17px; }
+.smart-panel h3 svg { color: #008bd1; flex: none; }
+.smart-panel h3 span { margin-left: auto; color: #008bd1; font-size: 13px; }
+.smart-fields { display: grid; gap: 12px; }
+.smart-panel label { display: grid; gap: 6px; font-size: 13px; font-weight: 700; color: #49677b; }
+.smart-panel input:not([type="checkbox"]), .smart-panel textarea { width: 100%; min-width: 0; padding: 11px 12px; border: 1px solid #d7e5ee; border-radius: 10px; background: #fbfdff; color: #15374e; font: inherit; font-weight: 400; }
+.smart-panel input:focus-visible, .smart-panel textarea:focus-visible { outline: 2px solid #008bd1; outline-offset: 2px; }
+.smart-money { grid-template-columns: 1fr 1fr; }
+.smart-tasks { display: grid; gap: 14px; }
+.smart-tasks label { display: flex; align-items: center; gap: 10px; font-weight: 500; color: #284b60; }
+.smart-tasks input { width: 19px; height: 19px; accent-color: #008bd1; flex: none; }
+.smart-tasks input:checked + span { text-decoration: line-through; color: #8296a3; }
+.smart-hint, .smart-save { color: #718898; font-size: 12px; line-height: 1.5; }
+.smart-hint { margin: 16px 0 0; }
+.smart-balance { display: flex; justify-content: space-between; margin: 18px 0 0; padding: 14px; border-radius: 12px; background: #eaf6fd; color: #356178; font-size: 14px; }
+.smart-balance strong { color: #007ab9; font-size: 18px; }
+.smart-note-label textarea { resize: vertical; min-height: 110px; }
+.smart-error { color: #b42318; font-size: 13px; }
+.smart-save { margin: 16px 2px 0; }
+@media (max-width: 600px) { .smart-trip { padding: 48px 16px; } .smart-layout { grid-template-columns: 1fr; gap: 10px; } .smart-panel { padding: 20px; border-radius: 17px; } .smart-heading { margin-bottom: 24px; } }

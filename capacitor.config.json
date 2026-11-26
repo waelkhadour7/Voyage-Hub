@@ -1,0 +1,11 @@
+{
+  "appId": "com.voyageplus.travel",
+  "appName": "Voyage Plus",
+  "webDir": "dist",
+  "server": {
+    "allowNavigation": [
+      "voyagehub.me",
+      "*.voyagehub.me"
+    ]
+  }
+}
