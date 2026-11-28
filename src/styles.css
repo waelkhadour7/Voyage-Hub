@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600;700;800&display=swap');
+
 :root { --fallback-sea:linear-gradient(160deg,#2aa9e0,#7fd0c8 60%,#e9d8a6); --fallback:linear-gradient(180deg,#5eb2f5 0%,#bfdcf3 45%,#f7c98d 80%,#f3a85f 100%); --navy:#0b4a9e; --ink:#1d2a3a; --lime:#8dbb2e; --max:1200px; }
+:root { --vp-blue:#0b4a9e; --vp-blue-bright:#0788c9; --vp-ink:#15374e; --vp-muted:#617a8d; --vp-surface:#fff; --vp-bg:#f1f7fc; --vp-border:#dceaf2; --vp-radius-sm:10px; --vp-radius-card:20px; --vp-radius-button:14px; --vp-space-1:8px; --vp-space-2:16px; --vp-space-3:24px; --vp-space-4:32px; --vp-font: "Plus Jakarta Sans",system-ui,sans-serif; --vp-tap:44px; }
 * { box-sizing:border-box; }
 body { margin:0; font-family:"Plus Jakarta Sans",system-ui,sans-serif; color:var(--ink); background:#fff; }
 a { color:inherit; text-decoration:none; }
@@ -193,6 +196,16 @@ h1 { font-size:clamp(36px,5vw,56px); line-height:1.05; letter-spacing:-.04em; fo
 .hero-header { padding-top:max(env(safe-area-inset-top,0px), var(--safe-area-inset-top,0px)); }
 html { -webkit-text-size-adjust:100%; }
 button, a { -webkit-tap-highlight-color:transparent; }
+.service-b2b { border:0; background:transparent; font:inherit; cursor:pointer; }
+.trip-summary { padding-top:var(--vp-space-3); }
+.trip-summary-card { display:flex; align-items:center; gap:var(--vp-space-2); padding:var(--vp-space-3); border:1px solid var(--vp-border); border-radius:var(--vp-radius-card); background:var(--vp-bg); color:var(--vp-ink); }
+.trip-summary-icon { display:grid; place-items:center; flex:none; width:48px; height:48px; border-radius:var(--vp-radius-button); background:#dceffa; color:var(--vp-blue); }
+.trip-summary-copy { flex:1; min-width:0; }.trip-summary-label { color:var(--vp-blue-bright); font-size:10px; font-weight:800; letter-spacing:.1em; }.trip-summary-copy h2 { margin:3px 0; font-size:20px; }.trip-summary-copy p { margin:0; color:var(--vp-muted); font-size:13px; overflow-wrap:anywhere; }
+.trip-summary-card button,.chat-plan-primary { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:var(--vp-tap); padding:10px 17px; border:0; border-radius:var(--vp-radius-button); background:var(--vp-blue); color:#fff; font:inherit; font-size:13px; font-weight:700; cursor:pointer; }
+.trip-dialog-backdrop { position:fixed; inset:0; z-index:200; display:grid; place-items:center; padding:16px; background:rgba(8,30,48,.65); }.trip-dialog { display:flex; flex-direction:column; width:min(900px,100%); max-height:min(90dvh,900px); overflow:hidden; background:var(--vp-surface); border-radius:var(--vp-radius-card); }.trip-dialog-bar { display:flex; align-items:center; justify-content:space-between; padding:12px 20px; color:var(--vp-ink); border-bottom:1px solid var(--vp-border); }.trip-dialog-bar button { display:grid; place-items:center; width:44px; height:44px; border:0; border-radius:50%; background:var(--vp-bg); color:var(--vp-ink); }.trip-dialog-body { overflow:auto; overscroll-behavior:contain; }.trip-dialog-body .smart-trip { padding:24px; }
+.chat-plan-primary { display:flex; margin:10px 12px 0; flex:none; background:var(--vp-blue); }
+.hg-sample-label { color:var(--vp-muted); font-size:12px; }.hg-view-details { display:inline-flex; align-items:center; gap:4px; color:var(--vp-blue); font-size:12px; font-weight:800; }
+@media(max-width:600px) { .trip-summary-card { flex-wrap:wrap; padding:var(--vp-space-2); }.trip-summary-card button { width:100%; }.trip-dialog-backdrop { padding:0; }.trip-dialog { width:100%; height:100dvh; max-height:none; border-radius:0; }.trip-dialog-body .smart-trip { padding:20px 16px; } }
 @media (max-width:900px) {
   .service-bar {
     display: flex;
@@ -415,4 +428,60 @@ button, a { -webkit-tap-highlight-color:transparent; }
   outline: 2px solid #0a84d6;
   outline-offset: 2px;
 }
+
+/* ==========================================================================
+   UI ENHANCEMENTS & DESIGN POLISH
+   ========================================================================== */
+
+/* Arabic Typography Enhancements */
+[dir="rtl"] body {
+  font-family: 'Readex Pro', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Button & Contrast Enhancements */
+.btn {
+  color: #052754;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(120, 160, 30, 0.45);
+}
+
+/* Card Zoom & Hover Polish */
+.country-card {
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.country-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(20, 60, 110, 0.14);
+}
+
+.country-card .country-img {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.country-card:hover .country-img {
+  transform: scale(1.06);
+}
+
+/* Glassmorphism & Modern Elevation */
+.chat-head,
+.contact-head,
+.ap-header {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.service-bar {
+  transition: box-shadow 0.3s ease;
+}
+
+.service-bar:hover {
+  box-shadow: 0 28px 65px rgba(20, 60, 110, 0.18), 0 4px 12px rgba(20, 60, 110, 0.08);
+}
+
 
