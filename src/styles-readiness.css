@@ -709,3 +709,6 @@
     grid-template-columns: 1fr;
   }
 }
+.rd-close-wrap { position: relative; z-index: 1; display: flex; justify-content: flex-end; padding: 0 20px; }
+.rd-close-checker { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 44px; padding: 8px 14px; border: 1px solid rgba(255,255,255,.7); border-radius: 12px; background: #fff; color: #12436a; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.rd-close-checker:focus-visible { outline: 3px solid #82d5ff; outline-offset: 2px; }

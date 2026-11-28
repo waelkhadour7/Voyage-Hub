@@ -1,4 +1,4 @@
-import { MessageCircle, ArrowLeft, MapPin, Star, Clock, Info } from "lucide-react";
+import { MessageCircle, ArrowLeft, MapPin, Info, Compass, ClipboardCheck } from "lucide-react";
 import contact from "../data/contact";
 import "../styles-country-detail.css";
 
@@ -13,6 +13,19 @@ const COUNTRY_OVERVIEWS = {
   Japan: "A captivating cultural journey through Tokyo's futuristic skyline and Kyoto's historic temples, serene gardens, and traditional tea houses.",
   Vietnam: "Explore the breathtaking limestone islands of Ha Long Bay, historic Hanoi streets, and scenic emerald waters on a luxury cruise.",
   Indonesia: "Retreat to Bali's tropical beaches, lush rice terraces in Ubud, vibrant arts, and luxury wellness resorts.",
+};
+
+const HIGHLIGHTS = {
+  Kenya: ["Maasai Mara wildlife", "Great Rift Valley", "Guided game drives"],
+  Egypt: ["Pyramids of Giza", "Nile cruises", "Red Sea escapes"],
+  Philippines: ["Palawan and El Nido", "Island hopping", "Tropical beaches"],
+  China: ["Great Wall", "Forbidden City", "Beijing heritage"],
+  Nepal: ["Kathmandu heritage", "Pokhara mountain views", "Chitwan wildlife"],
+  Korea: ["Seoul city life", "Gyeongbokgung Palace", "Shopping and culture"],
+  Thailand: ["Bangkok culture", "Phuket beaches", "Phi Phi islands"],
+  Japan: ["Tokyo city life", "Kyoto temples", "Traditional gardens"],
+  Vietnam: ["Ha Long Bay", "Hanoi old streets", "Scenic cruises"],
+  Indonesia: ["Bali beaches", "Ubud rice terraces", "Arts and wellness"],
 };
 
 export default function CountryDetailModal({ item, onClose }) {
@@ -40,11 +53,6 @@ export default function CountryDetailModal({ item, onClose }) {
             <ArrowLeft size={20} />
           </button>
 
-          {/* Photo Gallery Stack */}
-          <div className="cd-gallery-stack">
-            <img src={item.image} alt="" className="cd-thumb-item" />
-            <span className="cd-thumb-more">+12</span>
-          </div>
         </div>
 
         {/* Content Card Overlapping Hero */}
@@ -58,33 +66,20 @@ export default function CountryDetailModal({ item, onClose }) {
             </div>
           </div>
 
-          {/* Meta Info Pills */}
-          <div className="cd-meta-pills">
-            <div className="cd-meta-item">
-              <span className="cd-meta-icon">
-                <Clock size={16} />
-              </span>
-              <div className="cd-meta-text">
-                <small>Duration</small>
-                <strong>7 Days</strong>
-              </div>
-            </div>
-
-            <div className="cd-meta-item">
-              <span className="cd-meta-icon star">
-                <Star size={16} fill="currentColor" />
-              </span>
-              <div className="cd-meta-text">
-                <small>Rating</small>
-                <strong>{item.rating || "4.9"} (Reviews)</strong>
-              </div>
-            </div>
-          </div>
-
           {/* Overview */}
           <div className="cd-overview-wrap">
             <h4>Overview</h4>
             <p>{overviewText}</p>
+          </div>
+
+          {HIGHLIGHTS[item.country] && <div className="cd-planning-block">
+            <h4><Compass size={18} /> Experience highlights</h4>
+            <div className="cd-highlight-list">{HIGHLIGHTS[item.country].map((highlight) => <span key={highlight}>{highlight}</span>)}</div>
+            <p>These are ideas for your trip. Ask our team about availability and a personalised itinerary.</p>
+          </div>}
+          <div className="cd-planning-block">
+            <h4><ClipboardCheck size={18} /> Before you travel</h4>
+            <ul><li>Check passport and entry requirements with official sources.</li><li>Confirm travel dates, flights and accommodation before booking.</li><li>Consider travel insurance and allow room in your budget for activities.</li></ul>
           </div>
 
           {/* Action Buttons */}

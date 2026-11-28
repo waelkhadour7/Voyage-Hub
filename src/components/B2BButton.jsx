@@ -1,6 +1,7 @@
 import { Capacitor } from "@capacitor/core";
 import { InAppBrowser } from "@capgo/capacitor-inappbrowser";
 import { portal } from "../data/portal";
+import { Users } from "lucide-react";
 
 export default function B2BButton() {
   const handleClick = async () => {
@@ -27,8 +28,9 @@ export default function B2BButton() {
   };
 
   return (
-    <button className="b2b-btn" onClick={handleClick} aria-label="B2B Portal">
-      B2B
+    <button type="button" className="service service-b2b" onClick={handleClick} aria-label="Open B2B Portal">
+      <span className="service-icon" style={{ "--c": "var(--vp-blue)" }}><Users size={26} /></span>
+      <span className="service-label">B2B</span>
     </button>
   );
 }

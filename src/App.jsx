@@ -7,18 +7,23 @@ import CountriesSection from "./components/CountriesSection";
 import ReadinessSection from "./components/readiness/ReadinessSection";
 import AirlinesSection from "./components/AirlinesSection";
 import WhyChooseUs from "./components/WhyChooseUs";
-import SmartTrip from "./components/SmartTrip";
+import SmartTripSummary from "./components/SmartTripSummary";
 import ChatBot from "./components/ChatBot";
-import B2BButton from "./components/B2BButton";
-import SplashScreen from "./components/SplashScreen";
+import Onboarding from "./components/Onboarding";
+import { isAppMode } from "./lib/appMode";
 import HotelsPage from "./components/pages/HotelsPage";
 import { useHashRoute } from "./lib/useHashRoute";
 
 export default function App() {
-  const [showSplash, setShowSplash] = useState(true);
+  const [showOnboarding, setShowOnboarding] = useState(() => isAppMode());
+  const finishOnboarding = () => {
+    setShowOnboarding(false);
+  };
   const { route, navigate } = useHashRoute();
 
   const isHotelsPage = route.raw.startsWith("#/hotels");
+
+  if (showOnboarding) return <Onboarding onFinish={finishOnboarding} />;
 
   if (isHotelsPage) {
     return <HotelsPage onBackToHome={() => navigate("#/home")} />;
@@ -26,18 +31,16 @@ export default function App() {
 
   return (
     <>
-      {showSplash && <SplashScreen onFinish={() => setShowSplash(false)} />}
       <HeroSlider>
         <Header />
       </HeroSlider>
       <ServiceBar />
-      <SmartTrip />
-      <AboutSection />
+      <SmartTripSummary />
       <CountriesSection />
+      <AboutSection />
       <ReadinessSection />
       <AirlinesSection />
       <WhyChooseUs />
-      <B2BButton />
       <ChatBot />
     </>
   );

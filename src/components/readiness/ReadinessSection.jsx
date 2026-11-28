@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Plane, Compass, RotateCcw, AlertTriangle, MessageCircle, ShieldCheck } from "lucide-react";
+import { useRef, useState } from "react";
+import { Plane, Compass, RotateCcw, AlertTriangle, MessageCircle, ShieldCheck, X } from "lucide-react";
 import { useLang } from "../../lib/useLang";
 import { meta } from "../../data/readiness";
 import { getRule, isRuleOutdated } from "../../lib/readiness";
@@ -15,6 +15,7 @@ export default function ReadinessSection() {
   const [travelDate, setTravelDate] = useState("");
   const [passportExpiry, setPassportExpiry] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const startRef = useRef(null);
 
   const rule = selectedNat && selectedDest ? getRule(selectedNat.code, selectedDest.code) : null;
   const whatsappDigits = contact.whatsapp.replace(/\D/g, "");
@@ -31,6 +32,12 @@ export default function ReadinessSection() {
     setTravelDate("");
     setPassportExpiry("");
     setSubmitted(false);
+  };
+
+  const handleClose = () => {
+    setActive(false);
+    setSubmitted(false);
+    requestAnimationFrame(() => startRef.current?.focus());
   };
 
   const handleSendToTeam = () => {
@@ -77,12 +84,14 @@ export default function ReadinessSection() {
             </p>
 
             {!active && !submitted && (
-              <button type="button" className="rd-btn-start" onClick={handleStart}>
+              <button ref={startRef} type="button" className="rd-btn-start" onClick={handleStart}>
                 <Plane size={18} />
                 <span>{lang === "ar" ? "تحقق من رحلتي الآن" : "Check My Trip"}</span>
               </button>
             )}
           </div>
+
+          {(active || submitted) && <div className="rd-close-wrap"><button type="button" className="rd-close-checker" onClick={handleClose}><X size={18} aria-hidden="true" /><span>{lang === "ar" ? "إغلاق الفحص" : "Close checker"}</span></button></div>}
 
           {/* Inline Wizard */}
           {active && !submitted && (

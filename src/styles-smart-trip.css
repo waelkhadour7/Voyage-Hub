@@ -1,11 +1,11 @@
-.smart-trip { padding: 72px 20px; background: #f1f7fc; color: #15374e; }
+.smart-trip { padding: 72px 20px; background: var(--vp-bg); color: var(--vp-ink); font-family:var(--vp-font); }
 .smart-wrap { max-width: 1100px; margin: auto; }
 .smart-heading { max-width: 600px; margin-bottom: 30px; }
 .smart-kicker { display: inline-flex; align-items: center; gap: 7px; color: #0089d1; font-size: 11px; font-weight: 800; letter-spacing: .12em; }
 .smart-heading h2 { margin: 10px 0; font-size: clamp(30px, 4vw, 44px); line-height: 1.15; }
 .smart-heading p { margin: 0; color: #617a8d; line-height: 1.6; }
 .smart-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.smart-panel { padding: 24px; background: white; border: 1px solid #dceaf2; border-radius: 20px; box-shadow: 0 8px 24px rgba(18, 53, 76, .04); }
+.smart-panel { padding: var(--vp-space-3); background: var(--vp-surface); border: 1px solid var(--vp-border); border-radius: var(--vp-radius-card); box-shadow: 0 8px 24px rgba(18, 53, 76, .04); }
 .smart-panel h3 { display: flex; align-items: center; gap: 9px; margin: 0 0 19px; font-size: 17px; }
 .smart-panel h3 svg { color: #008bd1; flex: none; }
 .smart-panel h3 span { margin-left: auto; color: #008bd1; font-size: 13px; }
