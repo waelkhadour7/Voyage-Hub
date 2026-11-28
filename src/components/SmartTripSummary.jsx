@@ -44,16 +44,18 @@ export default function SmartTripSummary() {
 
   return <>
     <section className="trip-summary container" aria-labelledby="trip-summary-title">
-      <div className="trip-summary-card" style={{ flexWrap: "wrap", gap: "16px" }}>
+      <div className="trip-summary-card">
         <span className="trip-summary-icon"><Plane size={22} /></span>
         <div className="trip-summary-copy">
           <span className="trip-summary-label">YOUR TRAVEL COMPANION</span>
           <h2 id="trip-summary-title">My Smart Trip & Visa Wallet</h2>
           <p>{upcoming ? `${trip.destination}${trip.departure ? ` · ${trip.departure}` : ""}` : "Keep your plans, checklist, budget, and Schengen 90/180-day stay limit together."}</p>
         </div>
-        <div style={{ display: "flex", gap: "10px" }}>
-          <button type="button" onClick={() => setOpen(true)}>{upcoming ? "View trip" : "Start planning"}<ArrowRight size={17} /></button>
-          <button type="button" onClick={() => setSchengenOpen(true)} style={{ background: "linear-gradient(135deg, #0b4a9e, #0a84d6)" }}>
+        <div className="trip-summary-actions">
+          <button type="button" className="trip-summary-btn" onClick={() => setOpen(true)}>
+            {upcoming ? "View trip" : "Start planning"} <ArrowRight size={17} />
+          </button>
+          <button type="button" className="trip-summary-btn trip-summary-btn-schengen" onClick={() => setSchengenOpen(true)}>
             <ShieldCheck size={17} /> Schengen Calculator
           </button>
         </div>
